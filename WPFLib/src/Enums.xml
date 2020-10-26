@@ -1,0 +1,904 @@
+<?xml version="1.0"?>
+<Enums>
+
+<Enum Name="MenuItemRole">
+    <EnumValue Name="TopLevelItem" />
+    <EnumValue Name="TopLevelHeader" />
+    <EnumValue Name="SubmenuItem" />
+    <EnumValue Name="SubmenuHeader" />
+</Enum> 
+
+  <Enum Name="ResizeMode">
+      <EnumValue Name="NoResize" />
+      <EnumValue Name="CanMinimize" />
+      <EnumValue Name="CanResize" />
+      <EnumValue Name="CanResizeWithGrip" />
+  </Enum> 
+
+  <Enum Name="WindowState">
+      <EnumValue Name="Normal" />
+      <EnumValue Name="Minimized" />
+      <EnumValue Name="Maximized" />
+  </Enum> 
+
+  <Enum Name="WindowStyle">
+      <EnumValue Name="None" />
+      <EnumValue Name="SingleBorderWindow" />
+      <EnumValue Name="ThreeDBorderWindow" />
+      <EnumValue Name="ToolWindow" />
+  </Enum> 
+
+  <Enum Name="MouseButtonState">
+      <EnumValue Name="Released" />
+      <EnumValue Name="Pressed" />
+  </Enum> 
+
+
+  <Enum Name="PopupAnimation">
+      <EnumValue Name="None" />
+      <EnumValue Name="Fade" />
+      <EnumValue Name="Slide" />
+      <EnumValue Name="Scroll" />
+  </Enum> 
+
+  <Enum Name="PlacementMode">
+      <EnumValue Name="Absolute" />
+      <EnumValue Name="Relative" />
+      <EnumValue Name="Bottom" />
+      <EnumValue Name="Center" />
+      <EnumValue Name="Right" />
+      <EnumValue Name="AbsolutePoint" />
+      <EnumValue Name="RelativePoint" />
+      <EnumValue Name="Mouse" />
+      <EnumValue Name="MousePoint" />
+      <EnumValue Name="Left" />
+      <EnumValue Name="Top" />
+      <EnumValue Name="Custom" />
+  </Enum> 
+
+  <Enum Name="CursorType">
+      <EnumValue Name="None" />
+      <EnumValue Name="No" />
+      <EnumValue Name="Arrow" />
+      <EnumValue Name="AppStarting" />
+      <EnumValue Name="Cross" />
+      <EnumValue Name="Help" />
+      <EnumValue Name="IBeam" />
+      <EnumValue Name="SizeAll" />
+      <EnumValue Name="SizeNESW" />
+      <EnumValue Name="SizeNS" />
+      <EnumValue Name="SizeNWSE" />
+      <EnumValue Name="SizeWE" />
+      <EnumValue Name="UpArrow" />
+      <EnumValue Name="Wait" />
+      <EnumValue Name="Hand" />
+      <EnumValue Name="Pen" />
+      <EnumValue Name="ScrollNS" />
+      <EnumValue Name="ScrollWE" />
+      <EnumValue Name="ScrollAll" />
+      <EnumValue Name="ScrollN" />
+      <EnumValue Name="ScrollS" />
+      <EnumValue Name="ScrollW" />
+      <EnumValue Name="ScrollE" />
+      <EnumValue Name="ScrollNW" />
+      <EnumValue Name="ScrollNE" />
+      <EnumValue Name="ScrollSW" />
+      <EnumValue Name="ScrollSE" />
+      <EnumValue Name="ArrowCD" />
+  </Enum> 
+
+
+  <Enum Name="BindingStatus">
+      <EnumValue Name="Unattached" />
+      <EnumValue Name="Inactive" />
+      <EnumValue Name="Active" />
+      <EnumValue Name="Detached" />
+      <EnumValue Name="AsyncRequestPending" />
+      <EnumValue Name="PathError" />
+      <EnumValue Name="UpdateTargetError" />
+      <EnumValue Name="UpdateSourceError" />
+  </Enum> 
+
+  <Enum Name="BindingMode">
+      <EnumValue Name="TwoWay" />
+      <EnumValue Name="OneWay" />
+      <EnumValue Name="OneTime" />
+      <EnumValue Name="OneWayToSource" />
+      <EnumValue Name="Default" />
+  </Enum> 
+
+  <Enum Name="UpdateSourceTrigger">
+      <EnumValue Name="Default" />
+      <EnumValue Name="PropertyChanged" />
+      <EnumValue Name="LostFocus" />
+      <EnumValue Name="Explicit" />
+  </Enum> 
+
+  <Enum Name="FlowDirection">
+      <EnumValue Name="LeftToRight" />
+      <EnumValue Name="RightToLeft" />
+  </Enum> 
+
+  <Enum Name="RelativeSourceMode">
+      <EnumValue Name="PreviousData" />
+      <EnumValue Name="TemplatedParent" />
+      <EnumValue Name="Self" />
+      <EnumValue Name="FindAncestor" />
+  </Enum> 
+
+  <Enum Name="StretchDirection">
+      <EnumValue Name="Both" />
+      <EnumValue Name="UpOnly" />
+      <EnumValue Name="DownOnly" />
+  </Enum> 
+
+  <Enum Name="BitmapCreateOptions">
+      <EnumValue Name="None" Value="0" />
+      <EnumValue Name="PreservePixelFormat" Value="1" />
+      <EnumValue Name="DelayCreation" Value="2" />
+      <EnumValue Name="IgnoreColorProfile" Value="4" />
+      <EnumValue Name="IgnoreImageCache" Value="8" />
+  </Enum> 
+
+  <Enum Name="BitmapCacheOption">
+      <EnumValue Name="Default" Value="0" />
+      <EnumValue Name="OnDemand" Value="0" />
+      <EnumValue Name="OnLoad" Value="1" />
+      <EnumValue Name="None" Value="2" />
+  </Enum> 
+
+  <Enum Name="Dock">
+      <EnumValue Name="Left"/>
+      <EnumValue Name="Top"/>
+      <EnumValue Name="Right"/>
+      <EnumValue Name="Bottom"/>
+  </Enum>
+
+
+  <Enum Name="GridViewColumnHeaderRole">
+      <EnumValue Name="Normal"/>
+      <EnumValue Name="Floating"/>
+      <EnumValue Name="Padding"/>
+  </Enum>
+
+
+  <Enum Name="ColumnMeasureState">
+      <EnumValue Name="Init"/>
+      <EnumValue Name="Headered"/>
+      <EnumValue Name="Data"/>
+      <EnumValue Name="SpecificWidth"/>
+  </Enum>
+
+
+  <Enum Name="SelectionMode">
+      <EnumValue Name="Single"/>
+      <EnumValue Name="Multiple"/>
+      <EnumValue Name="Extended"/>
+  </Enum>
+
+  <Enum Name="GeneratorDirection">
+      <EnumValue Name="Forward"/>
+      <EnumValue Name="Backward"/>
+  </Enum>
+
+  <Enum Name="GeneratorStatus">
+      <EnumValue Name="NotStarted"/>
+      <EnumValue Name="GeneratingContainers"/>
+      <EnumValue Name="ContainersGenerated"/>
+      <EnumValue Name="Error"/>
+  </Enum>
+
+  <Enum Name="CollectionViewFlags">
+      <EnumValue Name="UpdatedOutsideDispatcher"  Value="0x2" /> 
+      <EnumValue Name="ShouldProcessCollectionChanged" Value="0x4" />
+      <EnumValue Name="NeedsRefresh"  Value="0x80" />
+      <EnumValue Name="IsMultiThreadCollectionChangeAllowed"  Value="0x100" />
+      <EnumValue Name="IsDynamic"  Value="0x20" />
+      <EnumValue Name="IsDataInGroupOrder"  Value="0x40" />
+      <EnumValue Name="CachedIsEmpty"  Value="0x200" />
+      <EnumValue Name="IsCurrentAfterLast"  Value="0x10" />
+      <EnumValue Name="IsCurrentBeforeFirst"  Value="0x8" />
+  </Enum>
+ 
+  <Enum Name="GridResizeDirection">
+      <EnumValue Name="Auto"/>
+      <EnumValue Name="Columns"/>
+      <EnumValue Name="Rows"/>
+  </Enum>
+
+  <Enum Name="GridResizeBehavior">
+      <EnumValue Name="BasedOnAlignment"/>
+      <EnumValue Name="CurrentAndNext"/>
+      <EnumValue Name="PreviousAndCurrent"/>
+      <EnumValue Name="PreviousAndNext"/>
+  </Enum>
+
+
+  <Enum Name="NavigationStatus">
+      <EnumValue Name="Idle"/>
+      <EnumValue Name="Navigating"/>
+      <EnumValue Name="NavigationFailed"/>
+      <EnumValue Name="Navigated"/>
+      <EnumValue Name="Stopped"/>
+  </Enum>
+
+  <Enum Name="NotifyCollectionChangedAction">
+      <EnumValue Name="Add"/>
+      <EnumValue Name="Remove"/>
+      <EnumValue Name="Replace"/>
+      <EnumValue Name="Move"/>
+      <EnumValue Name="Reset"/>
+  </Enum>
+
+  <Enum Name="TileMode">
+      <EnumValue Name="None"/>
+      <EnumValue Name="FlipX"/>
+      <EnumValue Name="FlipY"/>
+      <EnumValue Name="FlipXY"/>
+      <EnumValue Name="Tile"/>
+  </Enum>
+
+  <Enum Name="SweepDirection">
+      <EnumValue Name="Clockwise"/>
+      <EnumValue Name="Counterclockwise"/>
+  </Enum>
+
+  <Enum Name="AlignmentX">
+      <EnumValue Name="Left"/>
+      <EnumValue Name="Center"/>
+      <EnumValue Name="Right"/>
+  </Enum>
+
+  <Enum Name="AlignmentY">
+      <EnumValue Name="Top"/>
+      <EnumValue Name="Center"/>
+      <EnumValue Name="Bottom"/>
+  </Enum>
+
+  <Enum Name="BrushMappingMode">
+      <EnumValue Name="Absolute"/>
+      <EnumValue Name="RelativeToBoundingBox"/>
+  </Enum>
+
+  <Enum Name="TextAlignment">
+      <EnumValue Name="Left"/>
+      <EnumValue Name="Right"/>
+      <EnumValue Name="Center"/>
+      <EnumValue Name="Justify"/>
+  </Enum>
+
+  <Enum Name="GradientSpreadMethod">
+      <EnumValue Name="Pad"/>
+      <EnumValue Name="Reflect"/>
+      <EnumValue Name="Repeat"/>
+  </Enum>
+
+  <Enum Name="TextWrapping">
+      <EnumValue Name="NoWrap"/>
+      <EnumValue Name="Wrap"/>
+  </Enum>
+
+  <Enum Name="TextTrimming">
+      <EnumValue Name="CharacterEllipsis"/>
+      <EnumValue Name="None"/>
+  </Enum>
+
+    <Enum Name="ScrollBarVisibility">
+        <EnumValue Name="Disabled"/>
+        <EnumValue Name="Auto"/>
+        <EnumValue Name="Hidden"/>
+        <EnumValue Name="Visible"/>
+    </Enum>
+
+    <Enum Name="Visibility">
+        <EnumValue Name="Collapsed"/>
+        <EnumValue Name="Hidden"/>
+        <EnumValue Name="Visible"/>
+    </Enum>
+
+    <Enum Name="GridUnitType">
+        <EnumValue Name="Auto"/>
+        <EnumValue Name="Pixel"/>
+        <EnumValue Name="Star"/>
+    </Enum>
+
+    <Enum Name="MouseButton">
+        <EnumValue Name="Left"/>
+        <EnumValue Name="Middle"/>
+        <EnumValue Name="Right"/>
+    </Enum>
+
+    <Enum Name="LayoutTimeSizeType">
+        <EnumValue Name="None"  Value="0x0" /> 
+        <EnumValue Name="Pixel" Value="0x1" />
+        <EnumValue Name="Auto"  Value="0x2" />
+        <EnumValue Name="Star"  Value="0x4" />
+    </Enum>
+
+    <Enum Name="FillRule">
+        <EnumValue Name="EvenOdd"/>
+        <EnumValue Name="NonZero"/>
+    </Enum>
+
+
+    <Enum Name="RoutingStrategy">
+        <EnumValue Name="Tunnel"/>
+        <EnumValue Name="Bubble"/>
+        <EnumValue Name="Direct"/>
+        <EnumValue Name="Broadcast"/>
+    </Enum>
+
+    <Enum Name="SourceValueType">
+        <EnumValue Name="Property"/>
+        <EnumValue Name="Indexer"/>
+        <EnumValue Name="Direct"/>
+    </Enum>
+
+    <Enum Name="DrillIn">
+        <EnumValue Name="Always"/>
+        <EnumValue Name="Never"/>
+        <EnumValue Name="IfNeeded"/>
+    </Enum>
+
+    <Enum Name="SlipBehavior">
+        <EnumValue Name="Grow" />
+        <EnumValue Name="Slip" />
+    </Enum>
+
+    <Enum Name="LogicalOp">
+        <EnumValue Name="Equals" />
+        <EnumValue Name="NotEquals" />
+    </Enum>
+
+    <Enum Name="AnimationType">
+        <EnumValue Name="Automatic" />
+        <EnumValue Name="From" />
+        <EnumValue Name="To" />
+        <EnumValue Name="By" />
+        <EnumValue Name="FromTo" />
+        <EnumValue Name="FromBy" />
+    </Enum>
+
+    <Enum Name="FillBehavior">
+        <EnumValue Name="HoldEnd" />
+        <EnumValue Name="Stop" />
+    </Enum>
+
+    <Enum Name="TimeState">
+        <EnumValue Name="Stopped" />
+        <EnumValue Name="Paused" />
+        <EnumValue Name="Running" />
+    </Enum>
+
+    <Enum Name="ClockState">
+        <EnumValue Name="Active" />
+        <EnumValue Name="Filling" />
+        <EnumValue Name="Stopped" />
+    </Enum>
+
+    <Enum Name="ClockFlags">
+        <EnumValue Name="None" Value="0x0" />
+        <EnumValue Name="IsTimeManager" Value="0x1" />
+        <EnumValue Name="IsBackwardsProgressingGlobal" Value="0x2" />
+        <EnumValue Name="IsInteractivelyPaused" Value="0x4" />
+        <EnumValue Name="IsInteractivelyStopped" Value="0x8" />
+        <EnumValue Name="PendingInteractivePause" Value="0x10" />
+        <EnumValue Name="PendingInteractiveResume" Value="0x20" />
+        <EnumValue Name="PendingInteractiveStop" Value="0x40" />
+        <EnumValue Name="PendingInteractiveRemove" Value="0x80" />
+        <EnumValue Name="CanSlip" Value="0x100" />
+        <EnumValue Name="CurrentStateInvalidatedEventRaised" Value="0x200" />
+        <EnumValue Name="CurrentTimeInvalidatedEventRaised" Value="0x400" />
+        <EnumValue Name="CurrentGlobalSpeedInvalidatedEventRaised" Value="0x800" />
+        <EnumValue Name="CompletedEventRaised" Value="0x1000" />
+        <EnumValue Name="RemoveRequestedEventRaised" Value="0x2000" />
+        <EnumValue Name="IsInEventQueue" Value="0x4000" />
+        <EnumValue Name="NeedsTicksWhenActive" Value="0x8000" />
+        <EnumValue Name="NeedsPostfixTraversal" Value="0x10000" />
+        <EnumValue Name="PauseStateChangeDuringTick" Value="0x20000" />
+        <EnumValue Name="RootBeginPending" Value="0x40000" />
+        <EnumValue Name="HasControllableRoot" Value="0x80000" />
+        <EnumValue Name="AutoReverse" Value="0x100000" />
+    </Enum>
+
+    <Enum Name="PropertyValueType">
+        <EnumValue Name="Set" />
+        <EnumValue Name="Trigger" />
+        <EnumValue Name="PropertyTriggerResource" />
+        <EnumValue Name="DataTrigger" />
+        <EnumValue Name="DataTriggerResource" />
+        <EnumValue Name="TemplateBinding" />
+        <EnumValue Name="Resource" />
+    </Enum>
+
+    <Enum Name="ValueLookupType">
+        <EnumValue Name="Simple"/>
+        <EnumValue Name="Trigger"/>
+        <EnumValue Name="PropertyTriggerResource"/>
+        <EnumValue Name="DataTrigger"/>
+        <EnumValue Name="DataTriggerResource"/>
+        <EnumValue Name="TemplateBinding"/>
+        <EnumValue Name="Resource"/>
+    </Enum>
+
+
+    <Enum Name="RequestFlags">
+        <EnumValue Name="FullyResolved" Value="0" />
+        <EnumValue Name="AnimationBaseValue" Value="1" />
+        <EnumValue Name="CoercionBaseValue" Value="2" />
+        <EnumValue Name="DeferredReferences" Value="4" />
+        <EnumValue Name="SkipDefault" Value="8" />
+        <EnumValue Name="RawEntry" Value="0x10" />
+    </Enum>
+
+    <Enum Name="OperationType">
+        <EnumValue Name="Unknown"/>
+        <EnumValue Name="AddChild"/>
+        <EnumValue Name="RemoveChild"/>
+        <EnumValue Name="Inherit"/>
+        <EnumValue Name="ChangeMutableDefaultValue"/>
+    </Enum>
+
+    <Enum Name="BaseValueSource">
+        <EnumValue Name="Unknown"/>
+        <EnumValue Name="Default"/>
+        <EnumValue Name="Inherited"/>
+        <EnumValue Name="ThemeStyle"/>
+        <EnumValue Name="ThemeStyleTrigger"/>
+        <EnumValue Name="Style"/>
+        <EnumValue Name="TemplateTrigger"/>
+        <EnumValue Name="StyleTrigger"/>
+        <EnumValue Name="ImplicitReference"/>
+        <EnumValue Name="ParentTemplate"/>
+        <EnumValue Name="ParentTemplateTrigger"/>
+        <EnumValue Name="Local"/>
+    </Enum>
+
+    <Enum Name="FullValueSource">
+        <EnumValue Name="IsExpression" Value="0x10" />
+        <EnumValue Name="IsAnimated" Value="0x20" />
+        <EnumValue Name="IsCoerced" Value="0x40" />
+        <EnumValue Name="IsDeferredReference" Value="0x80" />
+        <EnumValue Name="HasExpressionMarker" Value="0x100" />
+        <EnumValue Name="ModifiersMask" Value="0x70" />
+        <EnumValue Name="ValueSourceMask" Value="0xF" />
+    </Enum>
+
+    <Enum Name="UpdateResult">
+        <EnumValue Name="None" Value="0" />
+        <EnumValue Name="ValueChanged" Value="1" />
+        <EnumValue Name="NotificationSent" Value="2" />
+    </Enum>
+
+
+    <Enum Name="Stretch">
+        <EnumValue Name="None"/>
+        <EnumValue Name="Fill"/>
+        <EnumValue Name="Uniform"/>
+        <EnumValue Name="UniformToFill" />
+    </Enum>
+
+    <Enum Name="PropertyFlag">
+        <EnumValue Name="None" Value="0x0" />
+        <EnumValue Name="AffectsMeasure" Value="0x1" />
+        <EnumValue Name="AffectsArrange" Value="0x2" />
+        <EnumValue Name="AffectsRender" Value="0x4" />
+        <EnumValue Name="AutoCreate" Value="0x10" />
+        <EnumValue Name="ReadOnly" Value="0x20" />
+        <EnumValue Name="IsContentProperty" Value="0x40" />
+        <EnumValue Name="IsAttachedProperty" Value="0x80" />
+        <EnumValue Name="IgnoreSubPropertyInvalidation" Value="0x100" />
+        <EnumValue Name="Inherits" Value="0x200" />
+    </Enum>
+
+    <Enum Name="HorizontalAlignment">
+        <EnumValue Name="Left" />
+        <EnumValue Name="Right" />
+        <EnumValue Name="Center" />
+        <EnumValue Name="Stretch" />
+    </Enum>
+
+    <Enum Name="VerticalAlignment">
+        <EnumValue Name="Top" />
+        <EnumValue Name="Bottom" />
+        <EnumValue Name="Center" />
+        <EnumValue Name="Stretch" />
+    </Enum>
+
+    <Enum Name="Orientation">
+        <EnumValue Name="Vertical" />
+        <EnumValue Name="Horizontal" />
+    </Enum>
+
+    <Enum Name="HandoffBehavior">
+        <EnumValue Name="SnapshotAndReplace" />
+        <EnumValue Name="Compose" />
+    </Enum>
+
+    <Enum Name="ClickMode">
+        <EnumValue Name="Release" />
+        <EnumValue Name="Press" />
+        <EnumValue Name="Hover" />
+    </Enum>
+
+    <Enum Name="KnownColor">
+        <EnumValue Name="AliceBlue" Value="0xfff0f8ff" />
+        <EnumValue Name="AntiqueWhite" Value="0xfffaebd7" />
+        <EnumValue Name="Aqua" Value="0xff00ffff" />
+        <EnumValue Name="Aquamarine" Value="0xff7fffd4" />
+        <EnumValue Name="Azure" Value="0xfff0ffff" />
+        <EnumValue Name="Bisque" Value="0xffffe4c4" />
+        <EnumValue Name="Black" Value="0xff000000" />
+        <EnumValue Name="BlanchedAlmond" Value="0xffffebcd" />
+        <EnumValue Name="Blue" Value="0xff0000ff" />
+        <EnumValue Name="BlueViolet" Value="0xff8a2be2" />
+        <EnumValue Name="Brown" Value="0xffa52a2a" />
+        <EnumValue Name="BurlyWood" Value="0xffdeb887" />
+        <EnumValue Name="CadetBlue" Value="0xff5f9ea0" />
+        <EnumValue Name="Chartreuse" Value="0xff7fff00" />
+        <EnumValue Name="Chocolate" Value="0xffd2691e" />
+        <EnumValue Name="Coral" Value="0xffff7f50" />
+        <EnumValue Name="CornflowerBlue" Value="0xff6495ed" />
+        <EnumValue Name="Cornsilk" Value="0xfffff8dc" />
+        <EnumValue Name="Crimson" Value="0xffdc143c" />
+        <EnumValue Name="Cyan" Value="0xff00ffff" />
+        <EnumValue Name="DarkBlue" Value="0xff00008b" />
+        <EnumValue Name="DarkCyan" Value="0xff008b8b" />
+        <EnumValue Name="DarkGoldenrod" Value="0xffb8860b" />
+        <EnumValue Name="DarkGray" Value="0xffa9a9a9" />
+        <EnumValue Name="DarkGreen" Value="0xff006400" />
+        <EnumValue Name="DarkKhaki" Value="0xffbdb76b" />
+        <EnumValue Name="DarkMagenta" Value="0xff8b008b" />
+        <EnumValue Name="DarkOliveGreen" Value="0xff556b2f" />
+        <EnumValue Name="DarkOrange" Value="0xffff8c00" />
+        <EnumValue Name="DarkOrchid" Value="0xff9932cc" />
+        <EnumValue Name="DarkRed" Value="0xff8b0000" />
+        <EnumValue Name="DarkSalmon" Value="0xffe9967a" />
+        <EnumValue Name="DarkSeaGreen" Value="0xff8fbc8f" />
+        <EnumValue Name="DarkSlateBlue" Value="0xff483d8b" />
+        <EnumValue Name="DarkSlateGray" Value="0xff2f4f4f" />
+        <EnumValue Name="DarkTurquoise" Value="0xff00ced1" />
+        <EnumValue Name="DarkViolet" Value="0xff9400d3" />
+        <EnumValue Name="DeepPink" Value="0xffff1493" />
+        <EnumValue Name="DeepSkyBlue" Value="0xff00bfff" />
+        <EnumValue Name="DimGray" Value="0xff696969" />
+        <EnumValue Name="DodgerBlue" Value="0xff1e90ff" />
+        <EnumValue Name="Firebrick" Value="0xffb22222" />
+        <EnumValue Name="FloralWhite" Value="0xfffffaf0" />
+        <EnumValue Name="ForestGreen" Value="0xff228b22" />
+        <EnumValue Name="Fuchsia" Value="0xffff00ff" />
+        <EnumValue Name="Gainsboro" Value="0xffdcdcdc" />
+        <EnumValue Name="GhostWhite" Value="0xfff8f8ff" />
+        <EnumValue Name="Gold" Value="0xffffd700" />
+        <EnumValue Name="Goldenrod" Value="0xffdaa520" />
+        <EnumValue Name="Gray" Value="0xff808080" />
+        <EnumValue Name="Green" Value="0xff008000" />
+        <EnumValue Name="GreenYellow" Value="0xffadff2f" />
+        <EnumValue Name="Honeydew" Value="0xfff0fff0" />
+        <EnumValue Name="HotPink" Value="0xffff69b4" />
+        <EnumValue Name="IndianRed" Value="0xffcd5c5c" />
+        <EnumValue Name="Indigo" Value="0xff4b0082" />
+        <EnumValue Name="Ivory" Value="0xfffffff0" />
+        <EnumValue Name="Khaki" Value="0xfff0e68c" />
+        <EnumValue Name="Lavender" Value="0xffe6e6fa" />
+        <EnumValue Name="LavenderBlush" Value="0xfffff0f5" />
+        <EnumValue Name="LawnGreen" Value="0xff7cfc00" />
+        <EnumValue Name="LemonChiffon" Value="0xfffffacd" />
+        <EnumValue Name="LightBlue" Value="0xffadd8e6" />
+        <EnumValue Name="LightCoral" Value="0xfff08080" />
+        <EnumValue Name="LightCyan" Value="0xffe0ffff" />
+        <EnumValue Name="LightGoldenrodYellow" Value="0xfffafad2" />
+        <EnumValue Name="LightGray" Value="0xffd3d3d3" />
+        <EnumValue Name="LightGreen" Value="0xff90ee90" />
+        <EnumValue Name="LightPink" Value="0xffffb6c1" />
+        <EnumValue Name="LightSalmon" Value="0xffffa07a" />
+        <EnumValue Name="LightSeaGreen" Value="0xff20b2aa" />
+        <EnumValue Name="LightSkyBlue" Value="0xff87cefa" />
+        <EnumValue Name="LightSlateGray" Value="0xff778899" />
+        <EnumValue Name="LightSteelBlue" Value="0xffb0c4de" />
+        <EnumValue Name="LightYellow" Value="0xffffffe0" />
+        <EnumValue Name="Lime" Value="0xff00ff00" />
+        <EnumValue Name="LimeGreen" Value="0xff32cd32" />
+        <EnumValue Name="Linen" Value="0xfffaf0e6" />
+        <EnumValue Name="Magenta" Value="0xffff00ff" />
+        <EnumValue Name="Maroon" Value="0xff800000" />
+        <EnumValue Name="MediumAquamarine" Value="0xff66cdaa" />
+        <EnumValue Name="MediumBlue" Value="0xff0000cd" />
+        <EnumValue Name="MediumOrchid" Value="0xffba55d3" />
+        <EnumValue Name="MediumPurple" Value="0xff9370db" />
+        <EnumValue Name="MediumSeaGreen" Value="0xff3cb371" />
+        <EnumValue Name="MediumSlateBlue" Value="0xff7b68ee" />
+        <EnumValue Name="MediumSpringGreen" Value="0xff00fa9a" />
+        <EnumValue Name="MediumTurquoise" Value="0xff48d1cc" />
+        <EnumValue Name="MediumVioletRed" Value="0xffc71585" />
+        <EnumValue Name="MidnightBlue" Value="0xff191970" />
+        <EnumValue Name="MintCream" Value="0xfff5fffa" />
+        <EnumValue Name="MistyRose" Value="0xffffe4e1" />
+        <EnumValue Name="Moccasin" Value="0xffffe4b5" />
+        <EnumValue Name="NavajoWhite" Value="0xffffdead" />
+        <EnumValue Name="Navy" Value="0xff000080" />
+        <EnumValue Name="OldLace" Value="0xfffdf5e6" />
+        <EnumValue Name="Olive" Value="0xff808000" />
+        <EnumValue Name="OliveDrab" Value="0xff6b8e23" />
+        <EnumValue Name="Orange" Value="0xffffa500" />
+        <EnumValue Name="OrangeRed" Value="0xffff4500" />
+        <EnumValue Name="Orchid" Value="0xffda70d6" />
+        <EnumValue Name="PaleGoldenrod" Value="0xffeee8aa" />
+        <EnumValue Name="PaleGreen" Value="0xff98fb98" />
+        <EnumValue Name="PaleTurquoise" Value="0xffafeeee" />
+        <EnumValue Name="PaleVioletRed" Value="0xffdb7093" />
+        <EnumValue Name="PapayaWhip" Value="0xffffefd5" />
+        <EnumValue Name="PeachPuff" Value="0xffffdab9" />
+        <EnumValue Name="Peru" Value="0xffcd853f" />
+        <EnumValue Name="Pink" Value="0xffffc0cb" />
+        <EnumValue Name="Plum" Value="0xffdda0dd" />
+        <EnumValue Name="PowderBlue" Value="0xffb0e0e6" />
+        <EnumValue Name="Purple" Value="0xff800080" />
+        <EnumValue Name="Red" Value="0xffff0000" />
+        <EnumValue Name="RosyBrown" Value="0xffbc8f8f" />
+        <EnumValue Name="RoyalBlue" Value="0xff4169e1" />
+        <EnumValue Name="SaddleBrown" Value="0xff8b4513" />
+        <EnumValue Name="Salmon" Value="0xfffa8072" />
+        <EnumValue Name="SandyBrown" Value="0xfff4a460" />
+        <EnumValue Name="SeaGreen" Value="0xff2e8b57" />
+        <EnumValue Name="SeaShell" Value="0xfffff5ee" />
+        <EnumValue Name="Sienna" Value="0xffa0522d" />
+        <EnumValue Name="Silver" Value="0xffc0c0c0" />
+        <EnumValue Name="SkyBlue" Value="0xff87ceeb" />
+        <EnumValue Name="SlateBlue" Value="0xff6a5acd" />
+        <EnumValue Name="SlateGray" Value="0xff708090" />
+        <EnumValue Name="Snow" Value="0xfffffafa" />
+        <EnumValue Name="SpringGreen" Value="0xff00ff7f" />
+        <EnumValue Name="SteelBlue" Value="0xff4682b4" />
+        <EnumValue Name="Tan" Value="0xffd2b48c" />
+        <EnumValue Name="Teal" Value="0xff008080" />
+        <EnumValue Name="Thistle" Value="0xffd8bfd8" />
+        <EnumValue Name="Tomato" Value="0xffff6347" />
+        <EnumValue Name="Transparent" Value="0xffffff" />
+        <EnumValue Name="Turquoise" Value="0xff40e0d0" />
+        <EnumValue Name="UnknownColor" Value="1" />
+        <EnumValue Name="Violet" Value="0xffee82ee" />
+        <EnumValue Name="Wheat" Value="0xfff5deb3" />
+        <EnumValue Name="White" Value="0xffffffff" />
+        <EnumValue Name="WhiteSmoke" Value="0xfff5f5f5" />
+        <EnumValue Name="Yellow" Value="0xffffff00" />
+        <EnumValue Name="YellowGreen" Value="0xff9acd32" />
+    </Enum>
+
+    <Enum Name="Key">
+      <EnumValue Name="A" Value="0x2c" />
+      <EnumValue Name="AbntC1" Value="0x93" />
+      <EnumValue Name="AbntC2" Value="0x94" />
+      <EnumValue Name="Add" Value="0x55" />
+      <EnumValue Name="Apps" Value="0x48" />
+      <EnumValue Name="Attn" Value="0xa3" />
+      <EnumValue Name="B" Value="0x2d" />
+      <EnumValue Name="Back" Value="2" />
+      <EnumValue Name="BrowserBack" Value="0x7a" />
+      <EnumValue Name="BrowserFavorites" Value="0x7f" />
+      <EnumValue Name="BrowserForward" Value="0x7b" />
+      <EnumValue Name="BrowserHome" Value="0x80" />
+      <EnumValue Name="BrowserRefresh" Value="0x7c" />
+      <EnumValue Name="BrowserSearch" Value="0x7e" />
+      <EnumValue Name="BrowserStop" Value="0x7d" />
+      <EnumValue Name="C" Value="0x2e" />
+      <EnumValue Name="Cancel" Value="1" />
+      <EnumValue Name="Capital" Value="8" />
+      <EnumValue Name="CapsLock" Value="8" />
+      <EnumValue Name="Clear" Value="5" />
+      <EnumValue Name="CrSel" Value="0xa4" />
+      <EnumValue Name="D" Value="0x2f" />
+      <EnumValue Name="D0" Value="0x22" />
+      <EnumValue Name="D1" Value="0x23" />
+      <EnumValue Name="D2" Value="0x24" />
+      <EnumValue Name="D3" Value="0x25" />
+      <EnumValue Name="D4" Value="0x26" />
+      <EnumValue Name="D5" Value="0x27" />
+      <EnumValue Name="D6" Value="40" />
+      <EnumValue Name="D7" Value="0x29" />
+      <EnumValue Name="D8" Value="0x2a" />
+      <EnumValue Name="D9" Value="0x2b" />
+      <EnumValue Name="DbeAlphanumeric" Value="0x9d" />
+      <EnumValue Name="DbeCodeInput" Value="0xa7" />
+      <EnumValue Name="DbeDbcsChar" Value="0xa1" />
+      <EnumValue Name="DbeDetermineString" Value="0xa9" />
+      <EnumValue Name="DbeEnterDialogConversionMode" Value="170" />
+      <EnumValue Name="DbeEnterImeConfigureMode" Value="0xa5" />
+      <EnumValue Name="DbeEnterWordRegisterMode" Value="0xa4" />
+      <EnumValue Name="DbeFlushString" Value="0xa6" />
+      <EnumValue Name="DbeHiragana" Value="0x9f" />
+      <EnumValue Name="DbeKatakana" Value="0x9e" />
+      <EnumValue Name="DbeNoCodeInput" Value="0xa8" />
+      <EnumValue Name="DbeNoRoman" Value="0xa3" />
+      <EnumValue Name="DbeRoman" Value="0xa2" />
+      <EnumValue Name="DbeSbcsChar" Value="160" />
+      <EnumValue Name="Decimal" Value="0x58" />
+      <EnumValue Name="Delete" Value="0x20" />
+      <EnumValue Name="Divide" Value="0x59" />
+      <EnumValue Name="Down" Value="0x1a" />
+      <EnumValue Name="E" Value="0x30" />
+      <EnumValue Name="End" Value="0x15" />
+      <EnumValue Name="Enter" Value="6" />
+      <EnumValue Name="EraseEof" Value="0xa6" />
+      <EnumValue Name="Escape" Value="13" />
+      <EnumValue Name="Execute" Value="0x1d" />
+      <EnumValue Name="ExSel" Value="0xa5" />
+      <EnumValue Name="F" Value="0x31" />
+      <EnumValue Name="F1" Value="90" />
+      <EnumValue Name="F10" Value="0x63" />
+      <EnumValue Name="F11" Value="100" />
+      <EnumValue Name="F12" Value="0x65" />
+      <EnumValue Name="F13" Value="0x66" />
+      <EnumValue Name="F14" Value="0x67" />
+      <EnumValue Name="F15" Value="0x68" />
+      <EnumValue Name="F16" Value="0x69" />
+      <EnumValue Name="F17" Value="0x6a" />
+      <EnumValue Name="F18" Value="0x6b" />
+      <EnumValue Name="F19" Value="0x6c" />
+      <EnumValue Name="F2" Value="0x5b" />
+      <EnumValue Name="F20" Value="0x6d" />
+      <EnumValue Name="F21" Value="110" />
+      <EnumValue Name="F22" Value="0x6f" />
+      <EnumValue Name="F23" Value="0x70" />
+      <EnumValue Name="F24" Value="0x71" />
+      <EnumValue Name="F3" Value="0x5c" />
+      <EnumValue Name="F4" Value="0x5d" />
+      <EnumValue Name="F5" Value="0x5e" />
+      <EnumValue Name="F6" Value="0x5f" />
+      <EnumValue Name="F7" Value="0x60" />
+      <EnumValue Name="F8" Value="0x61" />
+      <EnumValue Name="F9" Value="0x62" />
+      <EnumValue Name="FinalMode" Value="11" />
+      <EnumValue Name="G" Value="50" />
+      <EnumValue Name="H" Value="0x33" />
+      <EnumValue Name="HangulMode" Value="9" />
+      <EnumValue Name="HanjaMode" Value="12" />
+      <EnumValue Name="Help" Value="0x21" />
+      <EnumValue Name="Home" Value="0x16" />
+      <EnumValue Name="I" Value="0x34" />
+      <EnumValue Name="ImeAccept" Value="0x10" />
+      <EnumValue Name="ImeConvert" Value="14" />
+      <EnumValue Name="ImeModeChange" Value="0x11" />
+      <EnumValue Name="ImeNonConvert" Value="15" />
+      <EnumValue Name="ImeProcessed" Value="0x9b" />
+      <EnumValue Name="Insert" Value="0x1f" />
+      <EnumValue Name="J" Value="0x35" />
+      <EnumValue Name="JunjaMode" Value="10" />
+      <EnumValue Name="K" Value="0x36" />
+      <EnumValue Name="KanaMode" Value="9" />
+      <EnumValue Name="KanjiMode" Value="12" />
+      <EnumValue Name="L" Value="0x37" />
+      <EnumValue Name="LaunchApplication1" Value="0x8a" />
+      <EnumValue Name="LaunchApplication2" Value="0x8b" />
+      <EnumValue Name="LaunchMail" Value="0x88" />
+      <EnumValue Name="Left" Value="0x17" />
+      <EnumValue Name="LeftAlt" Value="120" />
+      <EnumValue Name="LeftCtrl" Value="0x76" />
+      <EnumValue Name="LeftShift" Value="0x74" />
+      <EnumValue Name="LineFeed" Value="4" />
+      <EnumValue Name="LWin" Value="70" />
+      <EnumValue Name="M" Value="0x38" />
+      <EnumValue Name="MediaNextTrack" Value="0x84" />
+      <EnumValue Name="MediaPlayPause" Value="0x87" />
+      <EnumValue Name="MediaPreviousTrack" Value="0x85" />
+      <EnumValue Name="MediaStop" Value="0x86" />
+      <EnumValue Name="Multiply" Value="0x54" />
+      <EnumValue Name="N" Value="0x39" />
+      <EnumValue Name="Next" Value="20" />
+      <EnumValue Name="NoName" Value="0xa9" />
+      <EnumValue Name="None" Value="0" />
+      <EnumValue Name="NumLock" Value="0x72" />
+      <EnumValue Name="NumPad0" Value="0x4a" />
+      <EnumValue Name="NumPad1" Value="0x4b" />
+      <EnumValue Name="NumPad2" Value="0x4c" />
+      <EnumValue Name="NumPad3" Value="0x4d" />
+      <EnumValue Name="NumPad4" Value="0x4e" />
+      <EnumValue Name="NumPad5" Value="0x4f" />
+      <EnumValue Name="NumPad6" Value="80" />
+      <EnumValue Name="NumPad7" Value="0x51" />
+      <EnumValue Name="NumPad8" Value="0x52" />
+      <EnumValue Name="NumPad9" Value="0x53" />
+      <EnumValue Name="O" Value="0x3a" />
+      <EnumValue Name="Oem1" Value="140" />
+      <EnumValue Name="Oem102" Value="0x9a" />
+      <EnumValue Name="Oem2" Value="0x91" />
+      <EnumValue Name="Oem3" Value="0x92" />
+      <EnumValue Name="Oem4" Value="0x95" />
+      <EnumValue Name="Oem5" Value="150" />
+      <EnumValue Name="Oem6" Value="0x97" />
+      <EnumValue Name="Oem7" Value="0x98" />
+      <EnumValue Name="Oem8" Value="0x99" />
+      <EnumValue Name="OemAttn" Value="0x9d" />
+      <EnumValue Name="OemAuto" Value="160" />
+      <EnumValue Name="OemBackslash" Value="0x9a" />
+      <EnumValue Name="OemBackTab" Value="0xa2" />
+      <EnumValue Name="OemClear" Value="0xab" />
+      <EnumValue Name="OemCloseBrackets" Value="0x97" />
+      <EnumValue Name="OemComma" Value="0x8e" />
+      <EnumValue Name="OemCopy" Value="0x9f" />
+      <EnumValue Name="OemEnlw" Value="0xa1" />
+      <EnumValue Name="OemFinish" Value="0x9e" />
+      <EnumValue Name="OemMinus" Value="0x8f" />
+      <EnumValue Name="OemOpenBrackets" Value="0x95" />
+      <EnumValue Name="OemPeriod" Value="0x90" />
+      <EnumValue Name="OemPipe" Value="150" />
+      <EnumValue Name="OemPlus" Value="0x8d" />
+      <EnumValue Name="OemQuestion" Value="0x91" />
+      <EnumValue Name="OemQuotes" Value="0x98" />
+      <EnumValue Name="OemSemicolon" Value="140" />
+      <EnumValue Name="OemTilde" Value="0x92" />
+      <EnumValue Name="P" Value="0x3b" />
+      <EnumValue Name="Pa1" Value="170" />
+      <EnumValue Name="PageDown" Value="20" />
+      <EnumValue Name="PageUp" Value="0x13" />
+      <EnumValue Name="Pause" Value="7" />
+      <EnumValue Name="Play" Value="0xa7" />
+      <EnumValue Name="Print" Value="0x1c" />
+      <EnumValue Name="PrintScreen" Value="30" />
+      <EnumValue Name="Prior" Value="0x13" />
+      <EnumValue Name="Q" Value="60" />
+      <EnumValue Name="R" Value="0x3d" />
+      <EnumValue Name="Return" Value="6" />
+      <EnumValue Name="Right" Value="0x19" />
+      <EnumValue Name="RightAlt" Value="0x79" />
+      <EnumValue Name="RightCtrl" Value="0x77" />
+      <EnumValue Name="RightShift" Value="0x75" />
+      <EnumValue Name="RWin" Value="0x47" />
+      <EnumValue Name="S" Value="0x3e" />
+      <EnumValue Name="Scroll" Value="0x73" />
+      <EnumValue Name="Select" Value="0x1b" />
+      <EnumValue Name="SelectMedia" Value="0x89" />
+      <EnumValue Name="Separator" Value="0x56" />
+      <EnumValue Name="Sleep" Value="0x49" />
+      <EnumValue Name="Snapshot" Value="30" />
+      <EnumValue Name="Space" Value="0x12" />
+      <EnumValue Name="Subtract" Value="0x57" />
+      <EnumValue Name="System" Value="0x9c" />
+      <EnumValue Name="T" Value="0x3f" />
+      <EnumValue Name="Tab" Value="3" />
+      <EnumValue Name="U" Value="0x40" />
+      <EnumValue Name="Up" Value="0x18" />
+      <EnumValue Name="V" Value="0x41" />
+      <EnumValue Name="VolumeDown" Value="130" />
+      <EnumValue Name="VolumeMute" Value="0x81" />
+      <EnumValue Name="VolumeUp" Value="0x83" />
+      <EnumValue Name="W" Value="0x42" />
+      <EnumValue Name="X" Value="0x43" />
+      <EnumValue Name="Y" Value="0x44" />
+      <EnumValue Name="Z" Value="0x45" />
+      <EnumValue Name="Zoom" Value="0xa8" />
+    </Enum>
+
+    <Enum Name="ModifierKeys">
+        <EnumValue Name="None" Value="0x0" />
+        <EnumValue Name="Alt" Value="0x1" />
+        <EnumValue Name="Control" Value="0x2" />
+        <EnumValue Name="Shift" Value="0x4" />
+    </Enum>
+
+    <Enum Name="FocusNavigationDirection">
+        <EnumValue Name="Next" />
+        <EnumValue Name="Previous" />
+        <EnumValue Name="First" />
+        <EnumValue Name="Last" />
+        <EnumValue Name="Left" />
+        <EnumValue Name="Right" />
+        <EnumValue Name="Up" />
+        <EnumValue Name="Down" />
+    </Enum>
+
+    <Enum Name="KeyboardNavigationMode">
+        <EnumValue Name="Continue" />
+        <EnumValue Name="Cycle" />
+        <EnumValue Name="None" />
+        <EnumValue Name="Contained" />
+        <EnumValue Name="Local" />
+    </Enum>
+
+    <Enum Name="KeyTimeType">
+        <EnumValue Name="Percent" />
+        <EnumValue Name="TimeSpan" />
+        <EnumValue Name="Uniform" />
+    </Enum>
+
+</Enums>

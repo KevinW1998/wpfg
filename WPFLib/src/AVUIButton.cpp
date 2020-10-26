@@ -1,0 +1,8 @@
+#include <AVUICommon.h>
+#include <AVUIButton.h>
+
+REGISTER_ELEMENT_BEGIN(AVUI::Button)
+    REGISTER_DEFAULT_FACTORY()
+REGISTER_ELEMENT_END()
+
+

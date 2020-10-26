@@ -1,0 +1,38 @@
+PROJECT_TARGET=Carousel
+
+!include ..\..\..\Projects\Makefile.NT.inc
+
+OBJ=$(OBJDIR)\SampleApplication.obj \
+    $(OBJDIR)\Carousel.obj \
+    $(OBJDIR)\mmgr.obj \
+    $(OBJDIR)\ListBox3D.obj \
+    $(OBJDIR)\ListBox3DItem.obj
+
+CFLAGS=$(CFLAGS) /EHsc
+
+INCLUDE=$(INCLUDE);$(DXSDK_DIR)\include;..\include;..\..\Common\include;..\..\..\WPFLib\include;..\..\..\build\WPFLib\$(PLATFORM)\$(BUILD_FLAVOR);..\..\..\RenderLib\D3D9\include;
+LIB=$(LIB);$(DXSDK_DIR)\lib\x86;..\..\..\out\WPFLib\$(PLATFORM)\$(BUILD_FLAVOR);..\..\..\out\D3DRenderer\$(PLATFORM)\$(BUILD_FLAVOR);C:\Program Files\Microsoft Platform SDK\Lib
+LIBS=user32.lib d3d9.lib ole32.lib WPFLib.lib D3DRenderer.lib winmm.lib d3dx9.lib xinput.lib strmiids.lib
+LINKFLAGS=/subsystem:windows /nodefaultlib:libc.lib /nodefaultlib:msvcrtd /debug /debugtype:FIXUP,CV
+
+RESOURCESSRC=..\..\Common\Media\Xaml\SystemResources.xaml
+DATASRC=..\Media
+
+
+EXE=$(OUTDIR)\$(PROJECT_TARGET).exe
+RESOURCES=$(OUTDIR)\Media\Xaml\SystemResources.xaml
+
+projectall: $(EXE) $(RESOURCES) data
+
+$(EXE): $(OBJ) ..\..\..\out\WPFLib\$(PLATFORM)\$(BUILD_FLAVOR)\WPFLib.lib ..\..\..\out\D3DRenderer\$(PLATFORM)\$(BUILD_FLAVOR)\D3DRenderer.lib
+	link $(LINKFLAGS) $(OBJ) $(LIBS) /OUT:$(EXE) /PDB:$(OUTDIR)\$(PROJECT_TARGET).pdb
+  
+$(RESOURCES) : $(RESOURCESSRC)
+  xcopy /Y $(RESOURCESSRC) $(OUTDIR)\Media\Xaml\*
+
+data:
+  xcopy /Y /s /I /D $(DATASRC) $(OUTDIR)\Media
+	
+{..\..\Common\src}.cpp{$(OBJDIR)}.obj:
+	cl /Zi /c $(CFLAGS) $< /Fo$@
+

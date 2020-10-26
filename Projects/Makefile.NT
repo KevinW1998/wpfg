@@ -1,0 +1,29 @@
+
+all:
+  chdir $(PROJECT_ROOT)\WPFLib\Projects
+  $(MAKE) /F $(PROJECT_ROOT)\WPFLib\Projects\Makefile.NT $(MAKEFLAGS)
+  chdir $(PROJECT_ROOT)\RenderLib\D3D9\Projects
+  $(MAKE) /F Makefile.NT $(MAKEFLAGS)
+  chdir $(PROJECT_ROOT)\Samples\XamlPad\Projects
+  $(MAKE) /F Makefile.NT $(MAKEFLAGS)
+  chdir $(PROJECT_ROOT)\Samples\Carousel\Projects
+  $(MAKE) /F Makefile.NT $(MAKEFLAGS)
+  chdir $(PROJECT_ROOT)\Samples\3DNav\Projects
+  $(MAKE) /F Makefile.NT $(MAKEFLAGS)
+  chdir $(PROJECT_ROOT)\Samples\ControlsTest\Projects
+  $(MAKE) /F Makefile.NT $(MAKEFLAGS)
+  
+clean:
+  chdir $(PROJECT_ROOT)\WPFLib\Projects
+  $(MAKE) /F Makefile.NT clean $(MAKEFLAGS)
+  chdir $(PROJECT_ROOT)\RenderLib\D3D9\Projects
+  $(MAKE) /F Makefile.NT clean $(MAKEFLAGS)
+  chdir $(PROJECT_ROOT)\Samples\XamlPad\Projects
+  $(MAKE) /F Makefile.NT clean $(MAKEFLAGS)
+  chdir $(PROJECT_ROOT)\Samples\Carousel\Projects
+  $(MAKE) /F Makefile.NT clean $(MAKEFLAGS)
+  chdir $(PROJECT_ROOT)\Samples\3DNav\Projects
+  $(MAKE) /F Makefile.NT clean $(MAKEFLAGS)
+  chdir $(PROJECT_ROOT)\Samples\ControlsTest\Projects
+  $(MAKE) /F Makefile.NT clean $(MAKEFLAGS)
+  

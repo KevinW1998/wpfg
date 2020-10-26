@@ -1,0 +1,129 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	MinWidth="800"
+	MinHeight="600" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+	<Page.Resources>
+		<DataTemplate x:Key="DataTemplate1">
+			<Grid Width="20" Height="20">
+				<Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="1" Height="1" Fill="#FFFFFFFF" Stroke="#FF000000"/>
+				<TextBlock TextWrapping="Wrap"/>
+			</Grid>
+		</DataTemplate>
+	</Page.Resources>
+	<Page.Background>
+		<LinearGradientBrush EndPoint="0.755,0.817" StartPoint="-0.014,-0.031">
+			<GradientStop Color="#FF000000" Offset="0"/>
+			<GradientStop Color="#FFFFFFFF" Offset="1"/>
+		</LinearGradientBrush>
+	</Page.Background>
+
+	<Grid x:Name="LayoutRoot">
+    <Menu Height="32" VerticalAlignment="Top">
+      <MenuItem Header="File">
+        <MenuItem Header="Open" />
+        <MenuItem Header="Save" />
+        <MenuItem Header="Save As..." />
+      </MenuItem>
+      <MenuItem Header="Edit">
+        <MenuItem Header="Cut" />
+        <MenuItem Header="Copy" />
+        <MenuItem Header="Paste" />
+      </MenuItem>        
+      <MenuItem Header="What"></MenuItem>        
+    </Menu>
+		<TextBlock HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFFFFFFF" TextWrapping="Wrap"><Run Text="Controls Test"/></TextBlock>
+		<ComboBox IsSynchronizedWithCurrentItem="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="154" Height="30.14" Margin="37,122,0,0" SelectedIndex="0" FontSize="20" Foreground="#FFFF8282">
+			<ComboBoxItem Content="First Item"/>
+			<ComboBoxItem Content="Second Item"/>
+			<ComboBoxItem Content="Third Item"/>
+		</ComboBox>
+		<TextBlock Margin="37,83.14,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFFFFFFF" TextWrapping="Wrap" HorizontalAlignment="Left" Height="23.28" Width="132.133"><Run Text="ComboBox"/></TextBlock>
+		<TextBox HorizontalAlignment="Left" Margin="37,202,0,0" VerticalAlignment="Top" Width="154" Height="30.14" Text="TextBox" TextWrapping="Wrap" Style="{DynamicResource {x:Type TextBox}}"/>
+		<Button HorizontalAlignment="Left" Margin="37,0,0,181.86" VerticalAlignment="Bottom" Width="154" Height="30.14" Content="Button" Style="{DynamicResource {x:Type Button}}">
+      <Button.ContextMenu>
+        <ContextMenu>
+          <MenuItem Header="First" />
+          <MenuItem Header="Second" />
+          <MenuItem Header="Third" />
+          <MenuItem Header="Fourth" />
+        </ContextMenu>
+      </Button.ContextMenu>
+    </Button>
+		<ToggleButton VerticalAlignment="Bottom" Height="30.14" Margin="37,0,0,126.86" Width="154" HorizontalAlignment="Left" Content="Toggle Button" Style="{DynamicResource {x:Type ToggleButton}}"/>
+		<RadioButton HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="154" Height="35.277" Content="RadioButton" Margin="37,0,0,65.723"/>
+		<RadioButton HorizontalAlignment="Left" Margin="37,0,0,17.723" VerticalAlignment="Bottom" Width="154" Height="35.277" Content="RadioButton"/>
+		<Slider HorizontalAlignment="Right" VerticalAlignment="Top" Width="147.823" Height="23.28" RenderTransformOrigin="24.429,15.2" Margin="0,83.14,54.177,0" ToolTip="This is a tooltip"/>
+		<ProgressBar HorizontalAlignment="Right" Margin="0,134.14,54.177,0" VerticalAlignment="Top" Width="147.823" Height="18"/>
+		<TabControl IsSynchronizedWithCurrentItem="True" HorizontalAlignment="Right" Margin="0,182,54.177,198" Width="167">
+			<TabItem Header="Tab1">
+				<Grid>
+					<TextBlock Margin="26.177,8,51.823,28" Text="Tab  1 Content" TextWrapping="Wrap"/>
+				</Grid>
+			</TabItem>
+			<TabItem Header="Tab2">
+				<TextBlock Width="85" Height="29" RenderTransformOrigin="0.5,0.5" Text="Tab 2 Content" TextWrapping="Wrap">
+					<TextBlock.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform ScaleX="1" ScaleY="1"/>
+							<SkewTransform AngleX="0" AngleY="0"/>
+							<RotateTransform Angle="0"/>
+							<TranslateTransform X="0" Y="0"/>
+						</TransformGroup>
+					</TextBlock.RenderTransform>
+				</TextBlock>
+			</TabItem>
+		</TabControl>
+		<ListBox IsSynchronizedWithCurrentItem="True" HorizontalAlignment="Right" Margin="0,0,54.177,57" VerticalAlignment="Bottom" Width="167" Height="100">
+			<ListBoxItem>One</ListBoxItem>
+			<ListBoxItem>Two</ListBoxItem>
+			<ListBoxItem>Three</ListBoxItem>
+			<ListBoxItem>Four</ListBoxItem>			
+		</ListBox>
+		<ScrollViewer Margin="311,83.14,294,0" VerticalAlignment="Top" Height="149" HorizontalScrollBarVisibility="Auto">
+			<Ellipse Width="211" Height="242" Fill="#FFFFFFFF" Stroke="#FF000000"/>
+		</ScrollViewer>
+		<Border Margin="332,256,333,250" CornerRadius="5,20,0,10" BorderThickness="14,4,19,12" BorderBrush="#FF000000"/>
+		<ListView IsSynchronizedWithCurrentItem="True" Margin="264,0,294,98" VerticalAlignment="Bottom" Height="100" ItemTemplate="{DynamicResource DataTemplate1}">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn Header="Column 1" />
+					<GridViewColumn Header="Column 2" />
+					<GridViewColumn Header="Column 3" />
+				</GridView>
+			</ListView.View>
+			
+			<ListViewItem>Text</ListViewItem>
+			<ListViewItem>Text2</ListViewItem>
+			<Ellipse Width="20" Height="20" Fill="Blue" />
+			<ListViewItem>Text3</ListViewItem>
+		</ListView>
+		<TreeView HorizontalAlignment="Left" Margin="37,247,0,230" Style="{StaticResource {x:Type TreeView}}" Width="154">
+			<TreeViewItem Header="First Entry">
+				<TreeViewItem Header="First Entry" />
+				<TreeViewItem Header="Second Entry" />
+				<TreeViewItem Header="Third Entry" />
+			</TreeViewItem>
+			
+			<TreeViewItem Header="Second Entry" />
+			<TreeViewItem Header="Third Entry">
+				<TreeViewItem Header="First Entry" />
+				<TreeViewItem Header="Second Entry">
+  				<TreeViewItem Header="First Entry" />
+  				<TreeViewItem Header="Second Entry">
+    				<TreeViewItem Header="Second Entry">
+      				<TreeViewItem Header="First Entry" />
+      				<TreeViewItem Header="Second Entry" />
+      				<TreeViewItem Header="Third Entry" />			
+            </TreeViewItem>                  
+          </TreeViewItem>
+  				<TreeViewItem Header="Third Entry" />			
+        </TreeViewItem>        
+				<TreeViewItem Header="Third Entry" />			
+			</TreeViewItem>
+		</TreeView>
+	</Grid>
+</Page>

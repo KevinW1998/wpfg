@@ -1,0 +1,351 @@
+<Grid MinWidth="800" MinHeight="600"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+>    
+  <Grid.Background>
+  
+    <RadialGradientBrush>
+      <RadialGradientBrush.RelativeTransform>
+        <TransformGroup>
+          <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.668" ScaleY="1.668"/>
+          <SkewTransform AngleX="0" AngleY="0" CenterX="0.5" CenterY="0.5"/>
+          <RotateTransform Angle="0" CenterX="0.5" CenterY="0.5"/>
+          <TranslateTransform X="0" Y="0"/>
+        </TransformGroup>
+      </RadialGradientBrush.RelativeTransform>
+      <GradientStop Color="#FF000000" Offset="0.847"/>
+      <GradientStop Color="#FFDDDDDD" Offset="0"/>
+    </RadialGradientBrush>
+  </Grid.Background>
+  <Grid.Resources>
+    <ResourceDictionary>
+    
+      <MeshGeometry3D x:Key="UnitRectMesh"
+                  Positions="-1, 1,0 1,1,0 1,-1,0 -1,-1,0"
+                  TextureCoordinates="1,0 0,0 0,1 1,1"
+                  TriangleIndices="1 0 3 2 1 3 1 3 0 2 3 1" />
+                  
+      <Style x:Key="MenuButton" TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type Button}">            
+              <ControlTemplate.Triggers>
+                <Trigger Property="IsFocused" Value="true">
+                  <Trigger.EnterActions>
+                    <BeginStoryboard>
+                      <Storyboard>
+                        <ColorAnimation Storyboard.TargetProperty="Foreground.Color" To="White" Duration="00:00:00.35" />
+                        <ColorAnimation Storyboard.TargetName="BG" Storyboard.TargetProperty="Fill.Color" To="#FFAA0000" Duration="00:00:00.35" />
+                      </Storyboard>
+                    </BeginStoryboard>
+                  </Trigger.EnterActions>
+                  <Trigger.ExitActions>
+                    <BeginStoryboard>
+                      <Storyboard>
+                        <ColorAnimation Storyboard.TargetProperty="Foreground.Color" To="Black" Duration="00:00:00.35" FillBehavior="Stop" />
+                        <ColorAnimation Storyboard.TargetName="BG" Storyboard.TargetProperty="Fill.Color" To="#FF888888" Duration="00:00:00.35" FillBehavior="Stop" />
+                      </Storyboard>
+                    </BeginStoryboard>                  
+                  </Trigger.ExitActions>
+                </Trigger>
+              </ControlTemplate.Triggers>
+            
+              <Grid>
+                <Rectangle x:Name="BG" Stretch="Fill" Fill="#FF888888" />
+                <ContentPresenter Margin="4" VerticalAlignment="Bottom" HorizontalAlignment="Left" />
+              </Grid>             
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+
+      <Vector3DAnimationUsingKeyFrames x:Key="LookDirectionIdle" Storyboard.TargetProperty="Camera.LookDirection" AutoReverse="true" IsAdditive="true" RepeatBehavior="Forever">
+        
+        <LinearVector3DKeyFrame Value="0, 0, 0.02" KeyTime="00:00:10" />
+        <LinearVector3DKeyFrame Value="0.03, 0, 0" KeyTime="00:00:20" />
+        <LinearVector3DKeyFrame Value="0.06, -0.02, 0" KeyTime="00:00:30" />
+        <LinearVector3DKeyFrame Value="0.03, 0, 0" KeyTime="00:00:40" />
+      </Vector3DAnimationUsingKeyFrames>
+ 
+
+      <Style x:Key="AnimatingScrollViewer" TargetType="{x:Type ScrollViewer}">
+        <Setter Property="KeyboardNavigation.IsTabStop" Value="false" />
+        <Setter Property="Template">
+          <Setter.Value>
+            <ControlTemplate TargetType="{x:Type ScrollViewer}">
+              <Grid>
+                <Grid.RowDefinitions>
+                  <RowDefinition Height="*" />
+                  <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+          
+      
+                <AnimatingScrollContentPresenter ClipToBounds="false" x:Name="PART_ScrollContentPresenter" Grid.Row="0" Grid.Column="0" Content="{TemplateBinding Content}" />
+                <ScrollBar x:Name="PART_VerticalScrollBar" Orientation="Vertical" Grid.Row="0" Grid.Column="1" Width="20.0"
+                           Minimum="0" Maximum="{TemplateBinding ScrollableHeight}" Value="{TemplateBinding VerticalOffset}"
+                           ViewportSize="{TemplateBinding ViewportHeight}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" />
+      
+      
+                <ScrollBar x:Name="PART_HorizontalScrollBar" Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Height="20.0"
+                           Minimum="0" Maximum="{TemplateBinding ScrollableWidth}" Value="{TemplateBinding HorizontalOffset}"
+                           ViewportSize="{TemplateBinding ViewportWidth}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" />
+            
+      
+              </Grid>
+            </ControlTemplate>
+          </Setter.Value>
+        </Setter>
+      </Style>
+      
+     
+    </ResourceDictionary>
+  </Grid.Resources>
+  
+  <Viewport3D x:Name="3DScene">
+    <Viewport3D.Camera>
+      <PerspectiveCamera FarPlaneDistance="100" LookDirection="-0.2, 0,1" UpDirection="0,1,0" NearPlaneDistance="1" Position="1, 0, -2.5" FieldOfView="45" />
+    </Viewport3D.Camera>
+    <Viewport3D.Triggers>
+      <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+        <EventTrigger.Actions>          
+          <BeginStoryboard>
+            <Storyboard RepeatBehavior="Forever">
+              <Vector3DAnimationUsingKeyFrames Storyboard.TargetProperty="Camera.UpDirection" AutoReverse="true">
+                <LinearVector3DKeyFrame Value="0,1,0" KeyTime="00:00:00" />
+                <LinearVector3DKeyFrame Value="0.02,1,0" KeyTime="00:00:05" />
+                <LinearVector3DKeyFrame Value="0,1,0" KeyTime="00:00:10" />
+                <LinearVector3DKeyFrame Value="-0.02,1,0" KeyTime="00:00:15" />
+                <LinearVector3DKeyFrame Value="0,1,0" KeyTime="00:00:20" />
+              </Vector3DAnimationUsingKeyFrames>
+            </Storyboard>            
+          </BeginStoryboard>
+
+        </EventTrigger.Actions>
+      </EventTrigger>
+    </Viewport3D.Triggers>
+  
+    <ModelVisual3D>
+    
+      <ModelVisual3D.Content>
+        <GeometryModel3D Geometry="{StaticResource UnitRectMesh}"> 
+          <GeometryModel3D.Material>
+            <DiffuseMaterial>
+              <DiffuseMaterial.Brush>
+                <VisualBrush Visual="{Binding ElementName=DemoMenu}" />
+              </DiffuseMaterial.Brush>
+            </DiffuseMaterial>
+          </GeometryModel3D.Material>
+          <GeometryModel3D.Transform>
+            <ScaleTransform3D ScaleY="0.25" />
+          </GeometryModel3D.Transform>
+        </GeometryModel3D>
+      </ModelVisual3D.Content>
+
+    </ModelVisual3D>
+    
+    <ModelVisual3D>
+    
+      <ModelVisual3D.Content>
+        <GeometryModel3D Geometry="{StaticResource UnitRectMesh}"> 
+          <GeometryModel3D.Material>
+            <DiffuseMaterial>
+              <DiffuseMaterial.Brush>
+                <VisualBrush Visual="{Binding ElementName=StartDemoPage}" />
+              </DiffuseMaterial.Brush>
+            </DiffuseMaterial>
+          </GeometryModel3D.Material>
+          <GeometryModel3D.Transform>
+            <Transform3DGroup>
+              <ScaleTransform3D ScaleY="0.25" />
+              <TranslateTransform3D OffsetZ="10.0" OffsetX="1" OffsetY="0.4" />
+            </Transform3DGroup>
+          </GeometryModel3D.Transform>
+        </GeometryModel3D>
+      </ModelVisual3D.Content>
+
+    </ModelVisual3D>
+    
+    <ModelVisual3D>
+
+      <ModelVisual3D.Content>
+        <GeometryModel3D Geometry="{StaticResource UnitRectMesh}"> 
+          <GeometryModel3D.Material>
+            <DiffuseMaterial>
+              <DiffuseMaterial.Brush>
+                <VisualBrush Visual="{Binding ElementName=MultiplayerPage}" />
+              </DiffuseMaterial.Brush>
+            </DiffuseMaterial>
+          </GeometryModel3D.Material>
+          <GeometryModel3D.Transform>
+            <Transform3DGroup>
+              <ScaleTransform3D ScaleY="0.375" />
+              <TranslateTransform3D OffsetZ="10.0" OffsetX="-4" OffsetY="-0.4" />
+            </Transform3DGroup>
+          </GeometryModel3D.Transform>
+        </GeometryModel3D>
+      </ModelVisual3D.Content>
+
+    </ModelVisual3D>
+
+  </Viewport3D>
+
+  <Grid Width="1024" Height="288" KeyboardNavigation.DirectionalNavigation="Cycle" x:Name="DemoMenu" Nav.IsNavPanel="true" Nav.CameraLocation="1, 0, -2.5" Nav.CameraLookDirection="-0.2, 0,1">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="64" />
+      <RowDefinition Height="128" />
+      <RowDefinition Height="32px" />
+      <RowDefinition Height="64px" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid.Resources>
+      <ResourceDictionary>
+        <Storyboard x:Key="TransitionOut">
+          <Point3DAnimationUsingKeyFrames Storyboard.TargetName="3DScene" Storyboard.TargetProperty="Camera.Position" IsAdditive="true" FillBehavior="Stop">
+            <LinearPoint3DKeyFrame Value="0,0,0" KeyTime="00:00:00" />
+            <LinearPoint3DKeyFrame Value="-2,1,0" KeyTime="00:00:0.5" />
+            <LinearPoint3DKeyFrame Value="-4,0.5,6" KeyTime="00:00:01.2" />
+          </Point3DAnimationUsingKeyFrames>        
+          <Vector3DAnimationUsingKeyFrames Storyboard.TargetName="3DScene" Storyboard.TargetProperty="Camera.LookDirection" IsAdditive="true" FillBehavior="Stop">
+            <LinearVector3DKeyFrame Value="0,0,0" KeyTime="00:00:00" />
+            <LinearVector3DKeyFrame Value="0.2,-0.1,0" KeyTime="00:00:0.5" />
+            <LinearVector3DKeyFrame Value="0.4,-0.2,0" KeyTime="00:00:01.2" />
+          </Point3DAnimationUsingKeyFrames>        
+        </Storyboard>
+      </ResourceDictionary>
+    </Grid.Resources>
+    
+    <Rectangle Stretch="Fill" Fill="#FF888888" />
+    <TextBlock Margin="4, 0, 0, 0" Foreground="White" FontSize="50" Text="demo menu" />
+
+    <Image Source="Lee.jpg" Stretch="Fill" Grid.Row="1" />
+    
+    <Rectangle Stretch="Fill" Fill="#FFAA0000" Grid.Row="2" />
+    <TextBlock Margin="4, 0, 0, 0" Foreground="White" VerticalAlignment="Center" Grid.Row="2" FontSize="17" Text="Please select an option" />
+    
+    <Grid Grid.Row="3">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      
+      <Button x:Name="Start Demo" Nav.TransitionAnimation="{StaticResource TransitionOut}" Nav.TransitionDelay="00:00:01" Nav.NavTarget="Page2" Nav.CameraOffset="0, 0, 0" Style="{StaticResource MenuButton}" Margin="0, 8, 8, 0" Content="Start Demo" FontSize="20" />
+      <Button Nav.TransitionAnimation="{StaticResource TransitionOut}" Nav.TransitionDelay="00:00:01" Nav.NavTarget="Page3" Nav.CameraOffset="-0.2, 0, 0" Grid.Column="1" Style="{StaticResource MenuButton}" Margin="0, 8, 8, 0" Content="Multiplayer" FontSize="20" />
+      <Button Nav.CameraOffset="-0.4, 0, 0" Grid.Column="2" Style="{StaticResource MenuButton}" Margin="0, 8, 8, 0" Content="Options" FontSize="20" />
+      <Button Nav.CameraOffset="-0.6, 0, 0" Grid.Column="3" Style="{StaticResource MenuButton}" Margin="0, 8, 8, 0" Content="Legal" FontSize="20" />
+      <Button Nav.CameraOffset="-0.8, 0, 0" Grid.Column="4" Style="{StaticResource MenuButton}" Margin="0, 8, 8, 0" Content="Exit Demo" FontSize="20" />
+      <ComboBox Nav.CameraOffset="-1.0, 0, 0" Margin="0, 8, 0, 0" Grid.Column="5" FontSize="20">
+        <ComboBoxItem IsSelected="true" FontSize="20" Foreground="Black">Item 1</ComboBoxItem>
+        <ComboBoxItem FontSize="20" Foreground="Black">Item 2</ComboBoxItem>
+        <ComboBoxItem FontSize="20" Foreground="Black">Item 3</ComboBoxItem>
+        <ComboBoxItem FontSize="20" Foreground="Black">Item 4</ComboBoxItem>
+      </ComboBox>
+    </Grid>
+    
+    <Grid.RenderTransform>
+      <TranslateTransform X="-10000.0" /> 
+    </Grid.RenderTransform>
+  </Grid>
+
+  <Grid Width="1024" Height="288" KeyboardNavigation.DirectionalNavigation="Cycle" x:Name="StartDemoPage" Nav.IsNavPanel="true" Nav.CameraLocation="1, 0.4, 7.5" Nav.CameraLookDirection="0.2, 0,1">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="64" />
+      <RowDefinition Height="128" />
+      <RowDefinition Height="32px" />
+      <RowDefinition Height="64px" />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    
+    <Rectangle Stretch="Fill" Fill="#FF888888" />
+    <TextBlock Margin="4, 0, 0, 0" Foreground="White" FontSize="50" Text="demo menu" />
+
+    <Image Source="Lee.jpg" Stretch="Fill" Grid.Row="1" />
+    
+    <Rectangle Stretch="Fill" Fill="#FFAA0000" Grid.Row="2" />
+    <TextBlock Margin="4, 0, 0, 0" Foreground="White" VerticalAlignment="Center" Grid.Row="2" FontSize="17" Text="Please select an option" />
+    
+    <Grid Grid.Row="3">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      
+      <Button x:Name="Page2" Nav.CameraOffset="0, 0, 0" Style="{StaticResource MenuButton}" Margin="0, 8, 8, 0" Content="Start Demo" FontSize="20" />
+      <Button Nav.CameraOffset="-0.2, 0, 0" Grid.Column="1" Style="{StaticResource MenuButton}" Margin="0, 8, 8, 0" Content="Multiplayer" FontSize="20" />
+      <Button Nav.CameraOffset="-0.4, 0, 0" Grid.Column="2" Style="{StaticResource MenuButton}" Margin="0, 8, 8, 0" Content="Options" FontSize="20" />
+      <Button Nav.CameraOffset="-0.6, 0, 0" Grid.Column="3" Style="{StaticResource MenuButton}" Margin="0, 8, 8, 0" Content="Legal" FontSize="20" />
+      <Button Nav.CameraOffset="-0.8, 0, 0" Grid.Column="4" Style="{StaticResource MenuButton}" Margin="0, 8, 0, 0" Content="Exit Demo" FontSize="20" />
+    </Grid>
+    
+    <Grid.RenderTransform>
+      <TranslateTransform X="-20000.0" /> 
+    </Grid.RenderTransform>
+  </Grid>
+
+
+  <Grid Width="1024" Height="384" ClipToBounds="true" Background="Transparent" KeyboardNavigation.DirectionalNavigation="Contained" x:Name="MultiplayerPage" Nav.IsNavPanel="true" Nav.CameraLocation="-3.5, -0.5, 7.5" Nav.CameraLookDirection="-0.2, 0,1">    
+    <StackPanel Orientation="Vertical">
+      <TextBlock Margin="4, 0, 0, 0" HorizontalAlignment="Center" Foreground="White" FontSize="50" Text="demo menu" />
+      <Button x:Name="Page3" Height="32" Width="270" HorizontalAlignment="Center" Nav.CameraOffset="0, 0, 0" Style="{StaticResource MenuButton}" Margin="0, 8, 8, 0" Content="Start Demo" FontSize="20" />
+      <ScrollViewer ClipToBounds="false" Style="{StaticResource AnimatingScrollViewer}" Width="270" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
+        <StackPanel Orientation="Horizontal">
+          <ListBox Focusable="false" Width="256" Height="256">
+            <ListBoxItem Content="One" />
+            <ListBoxItem Content="Two" />
+            <ListBoxItem Content="Three" />
+          </ListBox>
+          <ListBox Focusable="false" Width="256" Height="256">
+            <ListBoxItem Content="One" />
+            <ListBoxItem Content="Two" />
+            <ListBoxItem Content="Three" />
+          </ListBox>
+          <ListBox Focusable="false" Width="256" Height="256">
+            <ListBoxItem Content="One" />
+            <ListBoxItem Content="Two" />
+            <ListBoxItem Content="Three" />
+          </ListBox>
+          <ListBox Focusable="false" Width="256" Height="256">
+            <ListBoxItem Content="One" />
+            <ListBoxItem Content="Two" />
+            <ListBoxItem Content="Three" />
+          </ListBox>
+        </StackPanel>
+      </ScrollViewer>
+    </StackPanel>    
+    <Grid.RenderTransform>
+      <TranslateTransform X="-20000.0" /> 
+    </Grid.RenderTransform>
+  </Grid>
+  
+<!-- Unfortunate, bindings here don't work due to complex storyboard cloning. We should fix this.
+  <StackPanel Orientation="Vertical">
+    <TextBlock Text="{Binding ElementName=3DScene, Path=Camera.Position}" Foreground="White" />
+    <TextBlock Text="{Binding ElementName=3DScene, Path=Camera.LookDirection}" Foreground="White" />
+  </StackPanel>
+-->  
+
+
+
+</Grid>
+

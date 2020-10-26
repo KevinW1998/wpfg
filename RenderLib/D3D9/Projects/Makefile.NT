@@ -1,0 +1,23 @@
+PROJECT_TARGET=D3DRenderer
+
+!include ..\..\..\Projects\Makefile.NT.inc
+
+INCLUDE=$(DXSDK_DIR)\include;..\include;$(INCLUDE);..\..\..\WPFLib\include;..\..\..\build\WPFLib\$(PLATFORM)\$(BUILD_FLAVOR);C:\Program Files\Microsoft Platform SDK\Include
+
+OBJ= \
+    $(OBJDIR)\D3DInput.obj \
+    $(OBJDIR)\D3DUIBrushes.obj \
+    $(OBJDIR)\D3DUIFont.obj \
+    $(OBJDIR)\D3DUIFontManager.obj \
+    $(OBJDIR)\D3DUIFormattedText.obj \
+    $(OBJDIR)\D3DUIRenderer.obj \
+    $(OBJDIR)\D3DUITextureManager.obj \
+    $(OBJDIR)\D3DUIVideo.obj \
+    
+LIB=$(OUTDIR)\D3DRenderer.lib
+
+projectall: $(LIB)
+	
+$(LIB): $(OBJ)
+	lib $(LIBFLAGS) $(OBJ) /OUT:$(LIB)
+

@@ -1,0 +1,37 @@
+#include <AVUICommon.h>
+#include <AVUIObjectCollection.h>
+#include <AVUIINotifyCollectionChanged.h>
+#include <AVUIINotifyPropertyChanged.h>
+
+REGISTER_INTERFACE_TYPE(AVUI::ICollection);
+REGISTER_INTERFACE_TYPE(AVUI::IEnumerable);
+REGISTER_INTERFACE_TYPE(AVUI::IEnumerator);
+REGISTER_INTERFACE_TYPE(AVUI::INotifyCollectionChanged);
+
+REGISTER_ELEMENT_BEGIN(AVUI::EmptyEnumerable)
+    REGISTER_INTERFACE(IEnumerable)
+REGISTER_ELEMENT_END()
+
+REGISTER_ELEMENT_BEGIN(AVUI::EmptyEnumerator)
+    REGISTER_INTERFACE(IEnumerator)
+REGISTER_ELEMENT_END()
+
+
+
+REGISTER_ELEMENT(AVUI::CollectionChangedEventArgs);
+
+REGISTER_INTERFACE_TYPE(AVUI::INotifyPropertyChanged);
+REGISTER_ELEMENT(AVUI::PropertyChangedEventArgs);
+
+REGISTER_ELEMENT_BEGIN(AVUI::ObjectCollectionBase)
+
+    REGISTER_INTERFACE(ICollection)
+    REGISTER_INTERFACE(IEnumerable)
+REGISTER_ELEMENT_END()
+
+REGISTER_ELEMENT_BEGIN(AVUI::AnimatableCollectionBase)
+
+    REGISTER_INTERFACE(ICollection)
+    REGISTER_INTERFACE(IEnumerable)
+REGISTER_ELEMENT_END()
+

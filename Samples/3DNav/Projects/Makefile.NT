@@ -1,0 +1,36 @@
+PROJECT_TARGET=3DNav
+
+!include ..\..\..\Projects\Makefile.NT.inc
+
+OBJ=$(OBJDIR)\SampleApplication.obj \
+    $(OBJDIR)\3DNav.obj \
+    $(OBJDIR)\mmgr.obj \
+    $(OBJDIR)\AnimatingScrollContentPresenter.obj \
+
+CFLAGS=$(CFLAGS) /EHsc
+
+INCLUDE=$(INCLUDE);$(DXSDK_DIR)\include;..\include;..\..\Common\include;..\..\..\WPFLib\include;..\..\..\build\WPFLib\$(PLATFORM)\$(BUILD_FLAVOR);..\..\..\RenderLib\D3D9\include;
+LIB=$(LIB);$(DXSDK_DIR)\lib\x86;..\..\..\out\WPFLib\$(PLATFORM)\$(BUILD_FLAVOR);..\..\..\out\D3DRenderer\$(PLATFORM)\$(BUILD_FLAVOR);C:\Program Files\Microsoft Platform SDK\Lib
+LIBS=user32.lib d3d9.lib ole32.lib WPFLib.lib D3DRenderer.lib winmm.lib d3dx9.lib xinput.lib strmiids.lib
+LINKFLAGS=/subsystem:windows /nodefaultlib:libc.lib /nodefaultlib:msvcrtd /debug /debugtype:FIXUP,CV
+
+COMMONDATASRC=..\..\Common\Media
+DATASRC=..\Media
+
+
+EXE=$(OUTDIR)\$(PROJECT_TARGET).exe
+
+projectall: $(EXE) data commondata
+
+$(EXE): $(OBJ) ..\..\..\out\WPFLib\$(PLATFORM)\$(BUILD_FLAVOR)\WPFLib.lib ..\..\..\out\D3DRenderer\$(PLATFORM)\$(BUILD_FLAVOR)\D3DRenderer.lib
+	link $(LINKFLAGS) $(OBJ) $(LIBS) /OUT:$(EXE) /PDB:$(OUTDIR)\$(PROJECT_TARGET).pdb
+  
+data:
+  xcopy /Y /s /I /D $(DATASRC) $(OUTDIR)\Media
+
+commondata:
+  xcopy /Y /s /I /D $(COMMONDATASRC) $(OUTDIR)\Media
+
+{..\..\Common\src}.cpp{$(OBJDIR)}.obj:
+	cl /Zi /c $(CFLAGS) $< /Fo$@
+	

@@ -1,0 +1,153 @@
+<Grid MinWidth="800" MinHeight="600"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+>    
+  <Grid.Resources>
+    <ResourceDictionary>
+ 
+							<MeshGeometry3D x:Key="ListBoxMesh" Positions="0.86516201,-0.60000002,0.074245997 1,-0.60000002,0.097231001 1,0.60000002,0.097231001 0.86516201,0.60000002,0.074245997 0.71296299,0.60000002,0.055440001 0.71296299,-0.60000002,0.055440001 0.546875,0.60000002,0.040812999 0.546875,-0.60000002,0.040812999 0.37037,0.60000002,0.030365 0.37037101,-0.60000002,0.030365 0.186921,0.60000002,0.024096999 0.186922,-0.60000002,0.024096999 0,0.60000002,0.022007
+0,-0.60000002,0.022007 -0.186921,0.60000002,0.024096999 -0.186921,-0.60000002,0.024096999 -0.37037,0.60000002,0.030365 -0.37037,-0.60000002,0.030365 -0.546875,0.60000002,0.040812999 -0.546875,-0.60000002,0.040812999 -0.71296299,0.60000002,0.055440001 -0.71296299,-0.60000002,0.055440001 -0.86516201,0.60000002,0.074245997 -0.86516201,-0.60000002,0.074245997 -1,0.60000002,0.097231001 -1,-0.60000002,0.097231001
+-1,-0.60000002,0.097231001 -1,0.60000002,0.097231001 -1,0.60000002,0.057455 -1,-0.60000002,0.057455 -0.86516201,0.60000002,0.074245997 -0.86516201,0.60000002,0.034469999 -0.86516201,-0.60000002,0.074245997 -0.86516201,-0.60000002,0.034469999 -0.71296299,0.60000002,0.055440001 -0.71296299,0.60000002,0.015664 -0.71296299,-0.60000002,0.055440001 -0.71296299,-0.60000002,0.015664 -0.546875,0.60000002,0.040812999
+-0.546875,0.60000002,0.001037 -0.546875,-0.60000002,0.040812999 -0.546875,-0.60000002,0.001037 -0.37037,0.60000002,0.030365 -0.37037,0.60000002,-0.0094109997 -0.37037,-0.60000002,0.030365 -0.37037,-0.60000002,-0.0094109997 -0.186921,0.60000002,0.024096999 -0.186921,0.60000002,-0.01568 -0.186921,-0.60000002,0.024096999 -0.186921,-0.60000002,-0.01568 0,0.60000002,0.022007 0,0.60000002,-0.017769
+0,-0.60000002,0.022007 0,-0.60000002,-0.017769 0.186921,0.60000002,0.024096999 0.186921,0.60000002,-0.01568 0.186922,-0.60000002,0.024096999 0.186922,-0.60000002,-0.01568 0.37037,0.60000002,0.030365 0.37037,0.60000002,-0.0094109997 0.37037101,-0.60000002,0.030365 0.37037101,-0.60000002,-0.0094109997 0.546875,0.60000002,0.040812999 0.546875,0.60000002,0.001037 0.546875,-0.60000002,0.040812999
+0.546875,-0.60000002,0.001037 0.71296299,0.60000002,0.055440001 0.71296299,0.60000002,0.015664 0.71296299,-0.60000002,0.055440001 0.71296299,-0.60000002,0.015664 0.86516201,0.60000002,0.074245997 0.86516201,0.60000002,0.034469999 0.86516201,-0.60000002,0.074245997 0.86516201,-0.60000002,0.034469999 1,0.60000002,0.097231001 1,0.60000002,0.057455 1,-0.60000002,0.057455 1,0.60000002,0.057455
+0.86516201,-0.60000002,0.034469999 0.86516201,0.60000002,0.034469999 0.71296299,-0.60000002,0.015664 0.71296299,0.60000002,0.015664 0.546875,-0.60000002,0.001037 0.546875,0.60000002,0.001037 0.37037101,-0.60000002,-0.0094109997 0.37037,0.60000002,-0.0094109997 0.186922,-0.60000002,-0.01568 0.186921,0.60000002,-0.01568 0,-0.60000002,-0.017769 0,0.60000002,-0.017769 -0.186921,-0.60000002,-0.01568
+-0.186921,0.60000002,-0.01568 -0.37037,-0.60000002,-0.0094109997 -0.37037,0.60000002,-0.0094109997 -0.546875,-0.60000002,0.001037 -0.546875,0.60000002,0.001037 -0.71296299,-0.60000002,0.015664 -0.71296299,0.60000002,0.015664 -0.86516201,-0.60000002,0.034469999 -0.86516201,0.60000002,0.034469999 -1,-0.60000002,0.057455 -1,0.60000002,0.057455" TextureCoordinates="0.067419,1 0,1 0,0 0.067419,0 0.143518,0 0.143518,1 0.22656199,0 0.22656199,1 0.31481501,0 0.31481501,1 0.40653899,0 0.40653899,1 0.5,0 0.5,1 0.59346098,0 0.59346098,1 0.68518502,0 0.68518502,1 0.77343798,0 0.77343702,1 0.85648102,0 0.85648102,1 0.93258101,0
+0.93258101,1 1,0 1,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1
+0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1
+0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,1 0,0 0.067419,1 0.067419,0 0.143519,1 0.143518,0 0.22656199,1 0.22656199,0 0.31481501,1 0.31481501,0 0.40653899,1 0.40653899,0 0.5,1 0.5,0 0.59346098,1 0.59346098,0
+0.68518502,1 0.68518502,0 0.77343798,1 0.77343702,0 0.85648102,1 0.85648102,0 0.93258101,1 0.93258101,0 1,1 1,0" TriangleIndices="0 1 2 0 2 3 3 4 5 3 5 0 4 6 7 4 7 5 6 8 9 6 9 7 8 10 11 8 11 9 10 12 13 10 13 11 12 14 15 12 15 13 14 16 17 14 17 15 16 18 19 16 19 17 18 20 21 18 21 19 20 22 23 20 23 21 22 24 25 22 25 23 26 27 28 26 28 29 27 30 31 27 31 28 32 26 29 32 29 33 30 34 35 30 35 31 36 32 33 36 33 37 34 38 39 34 39 35 40 36 37 40 37 41 38 42 43 38 43 39 44 40 41 44 41 45 42 46 47 42 47 43 48 44 45 48 45 49 46 50 51 46 51 47 52 48 49 52 49 53 50 54 55 50 55 51 56 52 53 56 53 57 54 58 59 54 59 55 60 56 57 60 57 61 58 62 63 58 63 59 64 60 61 64 61 65 62 66 67 62 67 63 68 64 65 68 65 69 66 70 71 66 71 67 72 68 69 72 69 73 70 74 75 70 75 71 1 72 73 1 73 76 74 1 76 74 76 75 77 76 78 77 78 79 80 81 79 80 79 78 82 83 81 82 81 80 84 85 83 84 83 82 86 87 85 86 85 84 88 89 87 88 87 86 90 91 89 90 89 88 92 93 91 92 91 90 94 95 93 94 93 92 96 97 95 96 95 94 98 99 97 98 97 96 100 101 99 100 99 98"/>
+
+<!--   
+      <MeshGeometry3D x:Key="ListBoxMesh"
+                  Positions="-1, 0.6,0 1,0.6,0 1,-0.6,0 -1,-0.6,0"
+                  TextureCoordinates="1,0 0,0 0,1 1,1"
+                  TriangleIndices="1 0 3 2 1 3 1 3 0 2 3 1" />
+-->                  
+                 
+      <Style x:Key="ListBox3DVideo" TargetType="{x:Type MediaElement}">
+        <Style.Triggers>
+          <Trigger Property="Selector.IsSelected" Value="true">
+            <Trigger.EnterActions>
+              <BeginStoryboard>
+                <Storyboard>
+                  <DoubleAnimation Storyboard.TargetProperty="Volume" To="1.0" Duration="00:00:01.0" />
+                  <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1.0" Duration="00:00:01.0" />
+                </Storyboard>
+              </BeginStoryboard>
+            </Trigger.EnterActions>
+            <Trigger.ExitActions>
+              <BeginStoryboard>
+                <Storyboard>
+                  <DoubleAnimation Storyboard.TargetProperty="Volume" To="0.0" Duration="00:00:01.0" FillBehavior="Stop" />
+                  <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0.3" Duration="00:00:01.0" />
+                </Storyboard>
+              </BeginStoryboard>                                          
+            </Trigger.ExitActions>                                          
+          </Trigger>
+        </Style.Triggers>      
+      </Style>
+
+      <Style x:Key="{x:Type ListBox3DItem}" TargetType="{x:Type ListBox3DItem}">
+        <Style.Setters>
+          <Setter Property="DataTemplate">
+            <Setter.Value>
+              <DataTemplate>
+                <ModelVisual3D>
+                  <ModelVisual3D.Content>
+                    <GeometryModel3D Geometry="{StaticResource ListBoxMesh}"> 
+                      <GeometryModel3D.Material>
+                        <DiffuseMaterial>
+                          <DiffuseMaterial.Brush>
+                            <VisualBrush>
+                              <VisualBrush.Visual>
+                                <Grid Width="320" Height="192">
+                                  <Border BorderThickness="4" BorderBrush="Black">
+                                    <MediaElement Opacity="0.3" x:Name="VideoElement" Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" Volume="0"
+                                                  Selector.IsSelected="{Binding Path=(Selector.IsSelected), RelativeSource={RelativeSource TemplatedParent}}"
+                                                  Style="{StaticResource ListBox3DVideo}" />
+                                  </Border>                                                 
+                                </Grid>                                               
+                              </VisualBrush.Visual>
+                            </VisualBrush>
+                          </DiffuseMaterial.Brush>
+                        </DiffuseMaterial>
+                      </GeometryModel3D.Material>
+                    </GeometryModel3D>
+                  </ModelVisual3D.Content>
+                </ModelVisual3D>
+              </DataTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style.Setters>       
+      </Style>
+
+      <Style x:Key="{x:Type ListBox3D}" TargetType="{x:Type ListBox3D}">
+        <Style.Setters>
+          <Setter Property="Template">
+            <Setter.Value>
+              <ControlTemplate TargetType="{x:Type ListBox3D}">
+                <ControlTemplate.Triggers>
+                  <Trigger Property="IsZoomedIn" Value="true">
+                    <Trigger.EnterActions>
+                      <BeginStoryboard>
+                        <Storyboard>
+                          <Point3DAnimation Storyboard.TargetName="3DScene" Storyboard.TargetProperty="Camera.Position" To="0, 0, -7" Duration="00:00:01.0" />
+                          <Vector3DAnimation Storyboard.TargetName="3DScene" Storyboard.TargetProperty="Camera.LookDirection" To="0, 0, 1" Duration="00:00:01.0" />
+                        </Storyboard>
+                      </BeginStoryboard>                                                              
+                    </Trigger.EnterActions>
+                    
+                    <Trigger.ExitActions>                    
+                      <BeginStoryboard>
+                        <Storyboard>
+                          <Point3DAnimation Storyboard.TargetName="3DScene" Storyboard.TargetProperty="Camera.Position" To="0, 1.5, -12" Duration="00:00:01.0" FillBehavior="Stop" />
+                          <Vector3DAnimation Storyboard.TargetName="3DScene" Storyboard.TargetProperty="Camera.LookDirection" To="0, -0.15,1" Duration="00:00:01.0" FillBehavior="Stop" />
+                        </Storyboard>
+                      </BeginStoryboard>                                          
+                    </Trigger.ExitActions>
+                  </Trigger>
+                </ControlTemplate.Triggers>
+                <Grid>
+                  <Viewport3D x:Name="3DScene">
+                    <Viewport3D.Camera>
+                      <PerspectiveCamera FarPlaneDistance="100" LookDirection="0, -0.15,1" UpDirection="0,1,0" NearPlaneDistance="1" Position="0, 1.5, -12" FieldOfView="45" />
+                    </Viewport3D.Camera>
+                  
+                    <ModelVisual3D x:Name="PART_ItemsHost" />
+                  </Viewport3D>
+                </Grid>
+              </ControlTemplate>
+            </Setter.Value>
+          </Setter>
+        </Style.Setters>       
+      </Style>
+            
+    </ResourceDictionary>
+  </Grid.Resources>
+  <Grid.Background>
+		<LinearGradientBrush EndPoint="-0.031,0.054" StartPoint="1.008,1.194">
+			<GradientStop Color="#FF000000" Offset="0"/>
+			<GradientStop Color="#FFFFFFFF" Offset="1"/>
+		</LinearGradientBrush>
+  </Grid.Background>
+  
+  <ListBox3D x:Name="Carousel">  
+  
+    <ListBox3DItem Content="Media\Video\Beethoven.wmv" />
+    <ListBox3DItem Content="Media\Video\BloodDiamond.wmv" />
+    <ListBox3DItem Content="Media\Video\Bourne.wmv" />
+    <ListBox3DItem Content="Media\Video\Eragon.wmv" />
+
+    <ListBox3DItem Content="Media\Video\GoodShepherd.wmv" />
+    <ListBox3DItem Content="Media\Video\Illusionist.wmv" />
+    <ListBox3DItem Content="Media\Video\Pirates3.wmv" />
+    
+    <ListBox3DItem Content="Media\Video\Requiem.wmv" />
+    <ListBox3DItem Content="Media\Video\RH3.wmv" />
+    
+  </ListBox3D>
+  
+</Grid>
+
+

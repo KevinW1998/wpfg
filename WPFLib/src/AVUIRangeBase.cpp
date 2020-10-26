@@ -1,0 +1,13 @@
+#include <AVUICommon.h>
+#include <AVUIRangeBase.h>
+
+REGISTER_ELEMENT_BEGIN(AVUI::RangeBase)
+
+    REGISTER_PROPERTY(Minimum)
+    REGISTER_PROPERTY(Maximum)
+    REGISTER_PROPERTY(Value)
+    REGISTER_PROPERTY(LargeChange)
+    REGISTER_PROPERTY(SmallChange)
+REGISTER_ELEMENT_END()
+
+

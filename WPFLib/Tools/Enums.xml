@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Enums>
+    <Enum Name="HorizontalAlignment">
+        <EnumValue Name="Left" />
+        <EnumValue Name="Right" />
+        <EnumValue Name="Center" />
+    </Enum>
+
+    <Enum Name="VerticalAlignment">
+        <EnumValue Name="Top" />
+        <EnumValue Name="Bottom" />
+        <EnumValue Name="Center" />
+    </Enum>
+    <Enum Name="Orientation">
+        <EnumValue Name="Horizontal" />
+        <EnumValue Name="Vertical" />
+    </Enum>
+</Enums>

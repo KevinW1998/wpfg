@@ -1,0 +1,21 @@
+﻿<Page
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	x:Name="Page"
+	WindowTitle="Page"
+	FlowDirection="LeftToRight"
+	MinWidth="800"
+	MinHeight="600" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+	<Page.Background>
+		<LinearGradientBrush EndPoint="0.755,0.817" StartPoint="-0.014,-0.031">
+			<GradientStop Color="#FF000000" Offset="0"/>
+			<GradientStop Color="#FFFFFFFF" Offset="1"/>
+		</LinearGradientBrush>
+	</Page.Background>
+
+	<Grid x:Name="LayoutRoot">
+		<TextBlock HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" FontSize="20" Foreground="#FFFFFFFF" Width="320" TextWrapping="Wrap">
+        This is a sample xaml page (located in Media\Xaml\SamplePage.xaml) . Please edit it as you see fit, or load it in blend and update as loose xaml. XamlPad will refresh the page as it is modified.
+    </TextBlock>
+  </Grid>
+</Page>

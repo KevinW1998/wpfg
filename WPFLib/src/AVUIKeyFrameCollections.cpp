@@ -1,0 +1,36 @@
+#include <AVUICommon.h>
+#include <AVUIKeyFrameCollections.h>
+
+REGISTER_ELEMENT_BEGIN(AVUI::SingleKeyFrameCollection)
+
+REGISTER_ELEMENT_END()
+
+REGISTER_ELEMENT_BEGIN(AVUI::DoubleKeyFrameCollection)
+
+REGISTER_ELEMENT_END()
+
+REGISTER_ELEMENT_BEGIN(AVUI::PointKeyFrameCollection)
+
+REGISTER_ELEMENT_END()
+
+REGISTER_ELEMENT_BEGIN(AVUI::ColorKeyFrameCollection)
+
+REGISTER_ELEMENT_END()
+
+REGISTER_ELEMENT_BEGIN(AVUI::Vector3DKeyFrameCollection)
+
+REGISTER_ELEMENT_END()
+
+REGISTER_ELEMENT_BEGIN(AVUI::Point3DKeyFrameCollection)
+
+REGISTER_ELEMENT_END()
+
+REGISTER_ELEMENT_BEGIN(AVUI::Rotation3DKeyFrameCollection)
+
+REGISTER_ELEMENT_END()
+
+
+namespace AVUI {
+
+
+}; // namespace AVUI
